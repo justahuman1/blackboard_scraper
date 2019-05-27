@@ -1,3 +1,4 @@
+from win32.win32process import CREATE_NO_WINDOW
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
@@ -289,16 +290,13 @@ class DriverManager:
             quit()
         li_elements = parent_div.find_elements_by_tag_name("li")
         self.search_each_class(li_elements)
-        # messagebox.showerror(
-        #     "HTTP Error", "Scraping has failed.. Please close all windows.")
-        # quit()
 
 
 class GUI:
     def __init__(self, *args, **kwargs):
         self.window = Tk()
         self.window.title("Blackboard Scraper")
-        self.window.geometry('275x200')
+        self.window.geometry('275x230')
         self.form_labels = ['Username', 'Password', 'Class Number']
         self.form_objects = {}
         self.grades_only = None
