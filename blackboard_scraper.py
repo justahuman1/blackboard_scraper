@@ -179,7 +179,9 @@ class DriverManager:
             time.sleep(1)
             self.driver.switch_to.window(self.driver.window_handles[-1])
             self.grade_handler()
-            return None
+            messagebox.showinfo(
+                'Grades Completed!', 'You may now close all windows.')
+            driver.quit()
 
         fixed_amt = [i for i, week in enumerate(weeks) if not bool(
                         re.search('|'.join(
@@ -217,7 +219,7 @@ class DriverManager:
         all_classes_location = str(self.driver.title).lower()
         # early error warning due to tkinter mainloop thread
         _v_node = False
-        for i,class_elem in enumerate(courses):
+        for i, class_elem in enumerate(courses):
             self.driver.switch_to.window(self.driver.window_handles[0])
             if bool(re.search(self.classes_to_scrape, class_elem.text)):
                 _v_node = True
@@ -234,7 +236,7 @@ class DriverManager:
             elif (i == (len(courses)-1)) and not _v_node:
                 messagebox.showerror(
                     "Error", "No classes found..")
-                self.driver.close()
+                self.driver.quit()
                 return None
         self.driver.close()
         messagebox.showinfo(
@@ -292,7 +294,6 @@ class DriverManager:
         # quit()
 
 
-
 class GUI:
     def __init__(self, *args, **kwargs):
         self.window = Tk()
@@ -300,7 +301,6 @@ class GUI:
         self.window.geometry('275x200')
         self.form_labels = ['Username', 'Password', 'Class Number']
         self.form_objects = {}
-        # self.loading_msg_node = global_messenger
         self.grades_only = None
 
     def cred_submit(self):
