@@ -6,6 +6,8 @@ from selenium.common.exceptions import(
     NoSuchElementException, NoSuchWindowException)
 from tkinter import *
 from tkinter import ttk
+from tkinter import messagebox
+import threading
 import time
 import os
 import re
@@ -214,10 +216,11 @@ class DriverManager:
     def search_each_class(self, courses):
         all_classes_location = str(self.driver.title).lower()
         # early error warning due to tkinter mainloop thread
-        self._msgPrint("Scraping Class Failed...")
-        for class_elem in courses:
+        _v_node = False
+        for i,class_elem in enumerate(courses):
             self.driver.switch_to.window(self.driver.window_handles[0])
             if bool(re.search(self.classes_to_scrape, class_elem.text)):
+                _v_node = True
                 self._msgPrint(f"Scraping Class:\n{str(class_elem.text)[:7]}")
                 actions = ActionChains(self.driver)
                 (actions
@@ -228,10 +231,18 @@ class DriverManager:
                 self.class_content()
                 self.tabNormalize(all_classes_location)
                 self._msgPrint("Scraping Class Successful!")
+            elif (i == (len(courses)-1)) and not _v_node:
+                messagebox.showerror(
+                    "Error", "No classes found..")
+                self.driver.close()
+                return None
         self.driver.close()
+        messagebox.showinfo(
+            'Scrape Completed!', 'You may now close all windows.')
 
-    def start_driver(self, messenger):
-        self._msgPrint(original_msg_obj=messenger)
+    def start_driver(self):
+        global g_messenger
+        self._msgPrint(original_msg_obj=g_messenger)
         chrome_profile = Options()
         # create a folder for each class download (if not exists)
         new_folder_name = f'{self.classes_to_scrape}_downloads'
@@ -247,13 +258,15 @@ class DriverManager:
         if getattr(sys, 'frozen', False):
             driver_path = os.path.join(sys._MEIPASS, 'chromedriver.exe')
         else:
-            driver_path = './chromedriver.exe'
+            driver_path = 'chromedriver.exe'
         chrome_profile.add_experimental_option("prefs", profile)
+        self._msgPrint("Driver Initialized!")
         self.driver = webdriver.Chrome(
             executable_path=driver_path,
             options=chrome_profile
         )
         self.driver.get('https://myasucourses.asu.edu/')
+        self._msgPrint("Going to Blackboard..")
         username = self.driver.find_element_by_id("username")
         password = self.driver.find_element_by_id("password")
         username.send_keys(self._u)
@@ -265,22 +278,34 @@ class DriverManager:
             "tabAction?tab_tab_group_id=_2_1"
             )
         time.sleep(3)
-        parent_div = self.driver.find_element_by_id('_27_1termCourses_noterm')
+        try:
+            parent_div = self.driver.find_element_by_id(
+                '_27_1termCourses_noterm')
+        except NoSuchElementException:
+            messagebox.showerror(
+                "Login Failed", "Please try again with proper credentials.")
+            quit()
         li_elements = parent_div.find_elements_by_tag_name("li")
         self.search_each_class(li_elements)
+        # messagebox.showerror(
+        #     "HTTP Error", "Scraping has failed.. Please close all windows.")
+        # quit()
+
 
 
 class GUI:
     def __init__(self, *args, **kwargs):
         self.window = Tk()
         self.window.title("Blackboard Scraper")
-        self.window.geometry('250x175')
+        self.window.geometry('275x200')
         self.form_labels = ['Username', 'Password', 'Class Number']
         self.form_objects = {}
-        self.loading_msg_node = None
+        # self.loading_msg_node = global_messenger
         self.grades_only = None
 
     def cred_submit(self):
+        global g_messenger
+        g_messenger.configure(text="Driver Starting..")
         _u = self.form_labels[0]
         _p = self.form_labels[1]
         _cl = self.form_labels[2]
@@ -289,9 +314,17 @@ class GUI:
         my_cl = self.form_objects[_cl]['input'].get()
         grades_res = self.grades_only.get()
         main_runner = DriverManager(my_u, my_p, grades_res, my_cl)
-        main_runner.start_driver(self.loading_msg_node)
+        scanner = threading.Thread(target=main_runner.start_driver)
+        try:
+            # main_runner.start_driver(g_messenger)
+            scanner.start()
+        except:
+            messagebox.showerror(
+                "System Error", "Closing all threads..")
+            quit()
 
     def init_creator(self):
+        global g_messenger
         col = 0
         rows = len(self.form_labels)
         for i, elem in enumerate(self.form_labels):
@@ -320,11 +353,12 @@ class GUI:
             self.window, text="Start Scraper", command=self.cred_submit))
         submitButton.grid(row=submit_row, column=1, pady=(5, 20))
         updater = Label(self.window, text=elem)
-        self.loading_msg_node = Label(self.window, text='')
-        self.loading_msg_node.grid(
-            row=submit_row+1, column=1, pady=(ceiling, 0), padx=(10, 0))
+        g_messenger = Label(self.window, text='')
+        g_messenger.grid(
+            row=submit_row+1, column=0, pady=(0, 0), padx=(20, 0))
         self.window.mainloop()
 
+# global messenger required due  to threading
+g_messenger = None
 interface = GUI()
-
 interface.init_creator()
