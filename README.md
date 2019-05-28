@@ -11,9 +11,8 @@ This scraper was built to address that problem. Blackboard closes on June 30th s
 Running The Scraper
 ---
 1. Download and unzip this file
-  
-  Alternatively
 
   ```git clone https://github.com/justahuman1/Blackboard_scraper.git```
+1. Open the ```blackboard_scraper``` folder and go into the ```dist``` folder
 
 
