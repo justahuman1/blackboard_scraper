@@ -36,7 +36,9 @@ Running The Scraper
 
 
 <hr />
+
 **Stack**
+
 * Tkinter
 * Selenium
 * ActionChains
