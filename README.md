@@ -10,7 +10,7 @@ This scraper was built to address that problem. Blackboard closes on June 30th s
 
 **Windows Support Only**
 
-  However, if you know how to run python (pretty simple), you can run the source code (./src) and it should still work. 
+  However, if you know how to run python (pretty simple), you can run the source code ```(./src)``` and it should still work. 
   
   Cross-platform is difficult, as ASU does not allow headless-requests, so we have do manually run a chrome app and control it. Therefore, the commands utilized are platform native and may not apply in mac. Please report an issue if any occurs and I will try my best to address your issue.
 
