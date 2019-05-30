@@ -44,7 +44,7 @@ Advice: take a break from the computer during the scraping and let the scraper f
 
 Via the scraper, I have downloaded 2 GB of school assignments and PDFs within an hour. 
 
-
+Tested with 3 accounts, each in different ASU colleges. 
 
 
 <hr />
