@@ -12,7 +12,7 @@ This scraper was built to address that problem. Blackboard closes on June 30th s
 
   However, if you know how to run python (pretty simple), you can run the source code ```(./src)``` and it should still work. 
   
-  Cross-platform is difficult, as ASU does not allow headless-requests, so we have to manually run a chrome instance and control it. Therefore, the commands utilized are platform native and may not apply to a mac. Please report an issue if any occurs and I will try my best to address your issue.
+  Cross-platform is difficult, as ASU does not allow headless-requests, so we have to manually run a chrome instance and control it. Therefore, the commands utilized are platform native and may not apply to a mac. Please report an issue if any occurs and I will try my best to address it.
 
 Running The Scraper
 ---
