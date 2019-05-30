@@ -19,17 +19,17 @@ Running The Scraper
 1. Download and unzip this file
 
   ``` 
-      git clone https://github.com/justahuman1/Blackboard_scraper.git
+  git clone https://github.com/justahuman1/Blackboard_scraper.git
   ```
 2. Open the ```blackboard_scraper``` folder and go into the ```dist``` folder
 
   ```
-      cd ./blackboard_scraper/dist
+  cd ./blackboard_scraper/dist
   ```
 3. Run the ```blackboard_scraper.exe```
 
   ```
-      cmd /K ./blackboard_scraper.exe
+  cmd /K ./blackboard_scraper.exe
   ```
 4. The application will now pop-up and ask you for you ASU credentials.
 
