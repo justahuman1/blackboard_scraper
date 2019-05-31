@@ -52,7 +52,7 @@ Ex:
 
 **Windows Support Only**
 
-However, if you know how to run python a Python file, you can run the source code ```(./src)``` and it should still work. 
+However, if you know how to run a Python file, you can run and modify the source code ```(./src)```. 
   
 Cross-platform is difficult, as ASU does not allow headless-requests, so we have to manually run a chrome instance and control it. Therefore, the commands utilized are platform native and may not apply on a mac. Please report an issue if any occurs and I will try my best to address it.
 
