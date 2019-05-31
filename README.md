@@ -13,7 +13,7 @@ This scraper was built to address that problem. Blackboard closes on June 30th s
 Requirements
 ---
 - Windows OS
-- Latest version of Chrome (v74.*)'
+- Latest version of Chrome (v74.*)
 
 Running The Scraper
 ---
