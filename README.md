@@ -74,7 +74,7 @@ Tested with 3 accounts, each in different ASU schools.
 Bugs
 ---
 
-- White Screen Bug
+- Stuck on White Screen (new tab)
 
   This prevents the thread from moving forward. This is due to the interaction from the main thread to the downloader thread. The bug cannot be fixed from the front-end and is being patched by [Selenium](https://sqa.stackexchange.com/questions/3185/firefox-browser-launches-blank-page-while-running-tests-via-selenium). The only way to bypass this is to manually close the tab, so be wary if this happens to you. I tried to bypass this via def tabNormalizer(). 
 
