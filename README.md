@@ -21,7 +21,7 @@ Running The Scraper
   ``` 
   git clone https://github.com/justahuman1/Blackboard_scraper.git
   ```
-2. Open the ```blackboard_scraper``` folder and go into the ```dist``` folder
+2. Open the ```blackboard_scraper``` folder and navigate into the ```dist``` folder
 
   ```
   cd ./blackboard_scraper/dist
