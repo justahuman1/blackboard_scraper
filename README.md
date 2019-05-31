@@ -45,7 +45,7 @@ Ex:
     Class Number: 415 
     Grades Only: *checked*
 
-> NOTE: if you have multiple classes, specify the three digit class name as well, "CLS 300"
+> NOTE: if you have multiple classes with the same number, specify the three digit class name as well, "CLS 300"
 
 6. Click Start to run the program. Do not mess with the running instance (or it will break).
   
