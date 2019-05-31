@@ -34,6 +34,16 @@ Running The Scraper
 
 <img src="https://i.imgur.com/c1Sv1Z6.jpg" />
 
+5. Enter your asurite username and password. The class number field takes a class number. The grades only option will allow you to only download your submitted assignments in the 'My Grades' tabs. 
+
+Ex:
+  Username: asu_user
+  Password: ********
+  Class Number: 415     (NOTE: if you have multiple classes, specify the three digit class name as well, "CLS 300"
+  Grades Only: *checked*
+
+6. Click Start to run the program. Do not mess with the running instance (or it will break).
+  
 
 **Windows Support Only**
 
