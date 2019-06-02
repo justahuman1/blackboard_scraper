@@ -78,6 +78,9 @@ Bugs
 
   This prevents the thread from moving forward. This is due to the interaction from the main thread to the downloader thread. The bug cannot be fixed from the front-end and is currently being patched by [Selenium](https://sqa.stackexchange.com/questions/3185/firefox-browser-launches-blank-page-while-running-tests-via-selenium). The only way to bypass this is to manually close the tab, so be wary if this happens to you. I tried to bypass this via def tabNormalizer(). 
 
+- Terminal opens on start
+  
+  Not a bug,but a part of the Selenium process. I have read that it is possible to disable but I have not gotten to doing that yet.
 
 <hr />
 
