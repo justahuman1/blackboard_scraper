@@ -80,7 +80,7 @@ Bugs
 
 - Terminal opens on start
   
-  Not a bug,but a part of the Selenium process. I have read that it is possible to disable but I have not gotten to doing that yet.
+  Not a bug, but a part of the Selenium process. I have read that it is possible to disable but I have not gotten to doing that yet.
 
 <hr />
 
