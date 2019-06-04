@@ -69,7 +69,7 @@ Via the scraper, I have downloaded 2 GB of school assignments and PDFs within an
 
 Tested with 3 accounts, each in different ASU schools. 
 
-
+Completely PEP8 compliant!
 
 Bugs
 ---
