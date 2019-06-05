@@ -67,7 +67,7 @@ Advice: take a break during the scraping and let the scraper finish before using
 
 Via the scraper, I have downloaded 2 GB of school assignments and PDFs within an hour. 
 
-Tested with 3 accounts, each in different ASU schools. 
+Tested with 6 accounts so far! 
 
 Completely PEP8 compliant!
 
