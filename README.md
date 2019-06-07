@@ -59,6 +59,8 @@ Cross-platform is difficult, as ASU does not allow headless-requests, so we have
 
 Developer Notes
 ---
+Completely PEP8 compliant!
+
 This scraper utilities a depth first search method to recursively visit all nodes. Headless requests did not work and we cannot query for pdf files before visitng that folder, so DFS was the optimal approach. As a result, the scraper will take a while.
 
 If you know Python, feel free to modify the source code to refine the file types and other options.
@@ -69,7 +71,6 @@ Via the scraper, I have downloaded 2 GB of school assignments and PDFs within an
 
 Tested with 6 accounts so far! 
 
-Completely PEP8 compliant!
 
 Bugs
 ---
