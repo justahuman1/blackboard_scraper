@@ -1,6 +1,6 @@
 ## ASU Blackboard Scraper
 
-### Stable as of: May 2019
+### Stable as of: June 2019
 
 <img src="https://i.imgur.com/9ckRlex.gif" />
 
