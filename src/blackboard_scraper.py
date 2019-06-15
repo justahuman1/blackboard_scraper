@@ -249,7 +249,10 @@ class DriverManager:
         chrome_profile = Options()
         # create a folder for each class download (if not exists)
         new_folder_name = f'{self.classes_to_scrape}_downloads'
-        downloads_dir = f'{os.getcwd()}//{new_folder_name}'
+        downloads_dir = os.path.join(
+            os.getcwd(),
+            new_folder_name
+        )
         if not os.path.exists(downloads_dir):
             os.mkdir(new_folder_name)
         profile = {
