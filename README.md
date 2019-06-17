@@ -36,7 +36,7 @@ Running The Scraper
 
 <img src="https://i.imgur.com/c1Sv1Z6.jpg" />
 
-5. Enter your asurite username and password. The class number field takes a class number. The grades only option will allow you to only download your submitted assignments in the 'My Grades' tabs. 
+5. Enter your asurite username and password. The class number field takes a class number. The grades only option will allow you to only download your submitted assignments in the 'My Grades' tabs. Unchecked will download every file from the class, including the syllabus.
 
 Ex:
 
