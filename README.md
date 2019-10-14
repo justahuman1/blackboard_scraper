@@ -3,7 +3,7 @@
 <s>Stable as of: June 2019</s>
 ### ASU has officially closed down blackboard. Scraper is no longer working.
 
-##### This scraper has helped 126 people!
+##### This program has helped 126 people!
 
 
 <img src="https://i.imgur.com/9ckRlex.gif" />
