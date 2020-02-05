@@ -37,6 +37,7 @@ accepted_files = [
     r'slides',
     r'chapter'
 ]
+# Elements added to adhere to robots.txt
 left_window_ign = [
     r'policy',
     r'library',
@@ -280,9 +281,8 @@ class DriverManager:
         self.driver.find_element_by_class_name('submit').click()
         time.sleep(3)
         self.driver.get(
-            "https://myasucourses.asu.edu/webapps/portal/execute/tabs/"
-            "tabAction?tab_tab_group_id=_2_1"
-            )
+            # INSERT BLACKBOARD URL HERE
+        )
         time.sleep(3)
         try:
             parent_div = self.driver.find_element_by_id(
